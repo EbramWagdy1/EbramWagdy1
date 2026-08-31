@@ -1,155 +1,154 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="610" viewBox="0 0 1180 610">
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="640" viewBox="0 0 1240 640">
 <defs>
   <linearGradient id="asciiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#22D3EE">
-      <animate attributeName="stop-color" values="#22D3EE;#7C3AED;#38BDF8;#22D3EE" dur="9s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="100%" stop-color="#7C3AED">
-      <animate attributeName="stop-color" values="#7C3AED;#38BDF8;#22D3EE;#7C3AED" dur="9s" repeatCount="indefinite"/>
-    </stop>
+    <stop offset="0%" stop-color="#00FFF7"><animate attributeName="stop-color" values="#00FFF7;#7C3AED;#38BDF8;#00FFF7" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="100%" stop-color="#7C3AED"><animate attributeName="stop-color" values="#7C3AED;#38BDF8;#00FFF7;#7C3AED" dur="8s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#7C3AED"/>
-    <stop offset="50%" stop-color="#22D3EE"/>
+    <stop offset="50%" stop-color="#00FFF7"/>
     <stop offset="100%" stop-color="#10B981"/>
   </linearGradient>
-  <radialGradient id="bgGlow" cx="30%" cy="20%" r="80%">
-    <stop offset="0%" stop-color="#0B1120"/>
-    <stop offset="100%" stop-color="#050816"/>
+  <radialGradient id="bgGlow" cx="35%" cy="25%" r="75%">
+    <stop offset="0%" stop-color="#080D1A"/>
+    <stop offset="100%" stop-color="#040912"/>
   </radialGradient>
   <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-  <stop offset="0%" stop-color="#22D3EE" stop-opacity="0"/>
-  <stop offset="45%" stop-color="#22D3EE" stop-opacity="0.05"/>
-  <stop offset="50%" stop-color="#A5F3FC" stop-opacity="0.65"/>
-  <stop offset="55%" stop-color="#22D3EE" stop-opacity="0.05"/>
-  <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
-</linearGradient>
+    <stop offset="0%"   stop-color="#00FFF7" stop-opacity="0"/>
+    <stop offset="44%"  stop-color="#00FFF7" stop-opacity="0.07"/>
+    <stop offset="50%"  stop-color="#C7FBFE" stop-opacity="0.7"/>
+    <stop offset="56%"  stop-color="#00FFF7" stop-opacity="0.07"/>
+    <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+  </linearGradient>
   <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
-  <rect width="4" height="1" fill="#7DD3FC" opacity="0.05"/>
-</pattern>
-  <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-  <feGaussianBlur stdDeviation="4" result="blur"/>
-  <feMerge>
-    <feMergeNode in="blur"/>
-    <feMergeNode in="SourceGraphic"/>
-  </feMerge>
-</filter>
-  <mask id="revealMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1180" height="620">
-  <rect x="0" y="0" width="1180" height="0" fill="#fff">
-    <animate attributeName="height" from="0" to="560" dur="2.6s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
-  </rect>
-</mask>
-  <clipPath id="lc0"><rect x="500" y="26.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="0.75s" fill="freeze"/></rect></clipPath><clipPath id="lc1"><rect x="500" y="48.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="0.86s" fill="freeze"/></rect></clipPath><clipPath id="lc2"><rect x="500" y="70.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="0.98s" fill="freeze"/></rect></clipPath><clipPath id="lc3"><rect x="500" y="92.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="1.09s" fill="freeze"/></rect></clipPath><clipPath id="lc4"><rect x="500" y="114.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="1.21s" fill="freeze"/></rect></clipPath><clipPath id="lc5"><rect x="500" y="136.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="1.33s" fill="freeze"/></rect></clipPath><clipPath id="lc6"><rect x="500" y="158.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="1.44s" fill="freeze"/></rect></clipPath><clipPath id="lc7"><rect x="500" y="180.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="1.56s" fill="freeze"/></rect></clipPath><clipPath id="lc8"><rect x="500" y="202.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="1.67s" fill="freeze"/></rect></clipPath><clipPath id="lc9"><rect x="500" y="224.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="1.79s" fill="freeze"/></rect></clipPath><clipPath id="lc10"><rect x="500" y="246.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="1.90s" fill="freeze"/></rect></clipPath><clipPath id="lc11"><rect x="500" y="268.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="2.02s" fill="freeze"/></rect></clipPath><clipPath id="lc12"><rect x="500" y="290.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="2.13s" fill="freeze"/></rect></clipPath><clipPath id="lc13"><rect x="500" y="312.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="2.25s" fill="freeze"/></rect></clipPath><clipPath id="lc14"><rect x="500" y="334.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="2.36s" fill="freeze"/></rect></clipPath><clipPath id="lc15"><rect x="500" y="356.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="2.48s" fill="freeze"/></rect></clipPath><clipPath id="lc16"><rect x="500" y="378.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="2.59s" fill="freeze"/></rect></clipPath><clipPath id="lc17"><rect x="500" y="400.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="2.71s" fill="freeze"/></rect></clipPath><clipPath id="lc18"><rect x="500" y="422.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="2.82s" fill="freeze"/></rect></clipPath><clipPath id="lc19"><rect x="500" y="444.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="2.94s" fill="freeze"/></rect></clipPath><clipPath id="lc20"><rect x="500" y="466.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="3.05s" fill="freeze"/></rect></clipPath><clipPath id="lc21"><rect x="500" y="488.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.38s" begin="3.17s" fill="freeze"/></rect></clipPath>
+    <rect width="4" height="1" fill="#7DD3FC" opacity="0.04"/>
+  </pattern>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <mask id="reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="1240" height="650">
+    <rect x="0" y="0" width="1240" height="0" fill="#fff">
+      <animate attributeName="height" from="0" to="590" dur="2.4s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+    </rect>
+  </mask>
+  <clipPath id="lc0"><rect x="500" y="26.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="0.60s" fill="freeze"/></rect></clipPath><clipPath id="lc1"><rect x="500" y="48.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="0.70s" fill="freeze"/></rect></clipPath><clipPath id="lc2"><rect x="500" y="70.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="0.80s" fill="freeze"/></rect></clipPath><clipPath id="lc3"><rect x="500" y="92.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="0.90s" fill="freeze"/></rect></clipPath><clipPath id="lc4"><rect x="500" y="114.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.00s" fill="freeze"/></rect></clipPath><clipPath id="lc5"><rect x="500" y="136.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.10s" fill="freeze"/></rect></clipPath><clipPath id="lc6"><rect x="500" y="158.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.20s" fill="freeze"/></rect></clipPath><clipPath id="lc7"><rect x="500" y="180.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.30s" fill="freeze"/></rect></clipPath><clipPath id="lc8"><rect x="500" y="202.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.40s" fill="freeze"/></rect></clipPath><clipPath id="lc9"><rect x="500" y="224.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.50s" fill="freeze"/></rect></clipPath><clipPath id="lc10"><rect x="500" y="246.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.60s" fill="freeze"/></rect></clipPath><clipPath id="lc11"><rect x="500" y="268.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.70s" fill="freeze"/></rect></clipPath><clipPath id="lc12"><rect x="500" y="290.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.80s" fill="freeze"/></rect></clipPath><clipPath id="lc13"><rect x="500" y="312.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="1.90s" fill="freeze"/></rect></clipPath><clipPath id="lc14"><rect x="500" y="334.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="2.00s" fill="freeze"/></rect></clipPath><clipPath id="lc15"><rect x="500" y="356.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="2.10s" fill="freeze"/></rect></clipPath><clipPath id="lc16"><rect x="500" y="378.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="2.20s" fill="freeze"/></rect></clipPath><clipPath id="lc17"><rect x="500" y="400.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="2.30s" fill="freeze"/></rect></clipPath><clipPath id="lc18"><rect x="500" y="422.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="2.40s" fill="freeze"/></rect></clipPath><clipPath id="lc19"><rect x="500" y="444.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="2.50s" fill="freeze"/></rect></clipPath><clipPath id="lc20"><rect x="500" y="466.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="2.60s" fill="freeze"/></rect></clipPath><clipPath id="lc21"><rect x="500" y="488.00" width="0" height="24"><animate attributeName="width" from="0" to="690" dur="0.32s" begin="2.70s" fill="freeze"/></rect></clipPath>
   <style>
-    .ascii  { font-family: 'Courier New', Consolas, monospace; font-size: 7.4px; fill: url(#asciiGrad); letter-spacing: -0.2px; }
-    .key    { font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #22D3EE; font-weight: bold; }
-    .value  { font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #E5E7EB; }
-    .cc     { font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #475569; }
-    .head   { font-family: 'Courier New', Consolas, monospace; font-size: 17px; fill: #7C3AED; font-weight: bold; }
-    .accent { font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #10B981; font-weight: bold; }
+    .ascii  { font-family: 'Courier New', Consolas, monospace; font-size: 7.2px; fill: url(#asciiGrad); letter-spacing: -0.15px; }
+    .key    { font-family: 'Courier New', Consolas, monospace; font-size: 14.5px; fill: #00FFF7; font-weight: bold; }
+    .value  { font-family: 'Courier New', Consolas, monospace; font-size: 14.5px; fill: #F1F5F9; }
+    .cc     { font-family: 'Courier New', Consolas, monospace; font-size: 14.5px; fill: #334155; }
+    .head   { font-family: 'Courier New', Consolas, monospace; font-size: 16px;   fill: #A78BFA; font-weight: bold; }
+    .accent { font-family: 'Courier New', Consolas, monospace; font-size: 13px;   fill: #34D399; font-weight: bold; letter-spacing: 1px; }
     text, tspan { white-space: pre; }
-    
-    .term-label { font-family: 'Courier New', Consolas, monospace; font-size: 12px; fill: #64748B; letter-spacing: 0.5px; }
-    .scan-label { font-family: 'Courier New', Consolas, monospace; font-size: 10px; fill: #F87171; letter-spacing: 1px; }
-    .panel-title { font-family: 'Courier New', Consolas, monospace; font-size: 11px; fill: #38BDF8; letter-spacing: 2px; opacity: 0.7; }
-    .cursor-blink { fill: #22D3EE; }
-
+    .tl   { font-family: 'Courier New', Consolas, monospace; font-size: 11.5px; fill: #475569; letter-spacing: 0.4px; }
+    .sl   { font-family: 'Courier New', Consolas, monospace; font-size: 9px;    fill: #F87171; letter-spacing: 1.5px; font-weight: bold; }
+    .pt   { font-family: 'Courier New', Consolas, monospace; font-size: 10px;   fill: #38BDF8; letter-spacing: 2.5px; opacity: 0.7; }
+    .cb   { fill: #00FFF7; }
   </style>
 </defs>
 
-<rect width="1180" height="610" rx="18" fill="url(#bgGlow)"/>
-<rect width="1180" height="610" rx="18" fill="url(#scanlines)"/>
+<!-- Background -->
+<rect width="1240" height="640" rx="20" fill="url(#bgGlow)"/>
+<rect width="1240" height="640" rx="20" fill="url(#scanlines)"/>
 
+<!-- Title bar -->
 <g id="titlebar">
-  <rect x="3" y="3" width="1174" height="34" rx="16" fill="#0B1120" fill-opacity="0.85"/>
-  <circle cx="24" cy="20" r="5" fill="#EF4444"><animate attributeName="opacity" values="1;0.55;1" dur="4s" repeatCount="indefinite"/></circle>
-  <circle cx="42" cy="20" r="5" fill="#F59E0B"><animate attributeName="opacity" values="1;0.55;1" dur="4s" begin="0.3s" repeatCount="indefinite"/></circle>
-  <circle cx="60" cy="20" r="5" fill="#10B981"><animate attributeName="opacity" values="1;0.55;1" dur="4s" begin="0.6s" repeatCount="indefinite"/></circle>
-  <text x="590" y="25" text-anchor="middle" class="term-label">ebram@devos ~ % ./profile.sh --live</text>
-  <circle cx="1122" cy="20" r="4" fill="#F87171">
-    <animate attributeName="opacity" values="1;0.15;1" dur="1.1s" repeatCount="indefinite"/>
-  </circle>
-  <text x="1132" y="24" class="scan-label">SCANNING</text>
+  <rect x="3" y="3" width="1234" height="36" rx="18" fill="#060C1C" fill-opacity="0.92"/>
+  <circle cx="26" cy="21" r="5.5" fill="#EF4444"><animate attributeName="opacity" values="1;0.5;1" dur="4.5s" repeatCount="indefinite"/></circle>
+  <circle cx="45" cy="21" r="5.5" fill="#F59E0B"><animate attributeName="opacity" values="1;0.5;1" dur="4.5s" begin="0.25s" repeatCount="indefinite"/></circle>
+  <circle cx="64" cy="21" r="5.5" fill="#10B981"><animate attributeName="opacity" values="1;0.5;1" dur="4.5s" begin="0.5s" repeatCount="indefinite"/></circle>
+  <text x="620" y="26" text-anchor="middle" class="tl">EbramWagdy1@devos ─ zsh ─ ~/profile.sh ──live──────────────────────────</text>
+  <circle cx="1190" cy="21" r="4" fill="#F87171"><animate attributeName="opacity" values="1;0.12;1" dur="1.0s" repeatCount="indefinite"/></circle>
+  <text x="1200" y="26" class="sl">LIVE</text>
 </g>
 
-<g transform="translate(0,38)">
-  <rect x="14" y="26" width="488" height="468" rx="14" fill="#0B1120" fill-opacity="0.35" stroke="url(#borderGrad)" stroke-width="1" opacity="0.35"/>
-  <rect x="508" y="10" width="655" height="500" rx="14" fill="#0B1120" fill-opacity="0.35" stroke="url(#borderGrad)" stroke-width="1" opacity="0.35"/>
-  <text x="30" y="24" class="panel-title">VISUAL.MAP</text>
-  <text x="524" y="24" class="panel-title">SYSTEM.INFO</text>
+<g transform="translate(0,42)">
+  <!-- Panels -->
+  <rect x="14" y="22" width="505" height="498" rx="14" fill="#060C1C" fill-opacity="0.4" stroke="url(#borderGrad)" stroke-width="1.2" opacity="0.4"/>
+  <rect x="530" y="8"  width="695" height="512" rx="14" fill="#060C1C" fill-opacity="0.4" stroke="url(#borderGrad)" stroke-width="1.2" opacity="0.4"/>
+  <text x="28"  y="20" class="pt">[ VISUAL.MAP ]</text>
+  <text x="545" y="20" class="pt">[ SYSTEM.INFO ]</text>
 
-  <g mask="url(#revealMask)">
-  <text x="30" y="0" class="ascii">
-  
-<tspan x="30" y="79.98" xml:space="preserve">........::::::::::::::::::::::::::::::::::::::::............................................</tspan>
-<tspan x="30" y="87.53" xml:space="preserve">.......::::::::::::::::::::::::::::::::::::::::::...............................:...........</tspan>
-<tspan x="30" y="95.07" xml:space="preserve">...:::::::::::::::::::::::::::::::::::::::::::::::::::..................:....:::............</tspan>
-<tspan x="30" y="102.62" xml:space="preserve">...:::::::::::::::::::::::::::::::::::::::::-::..     .::::::::.......:::..::...............</tspan>
-<tspan x="30" y="110.16" xml:space="preserve">::::::::::::::::::::::::::::--:::::::::::-:.                . .::..::.::::::::..............</tspan>
-<tspan x="30" y="117.71" xml:space="preserve">:::::::::::::::::::---::::::::--:::::::-:                 ..    ......::::::::::............</tspan>
-<tspan x="30" y="125.25" xml:space="preserve">:::::::::::::::::::--::::::::::::::::-.                   .:...  ..:.::::::::::::...........</tspan>
-<tspan x="30" y="132.8" xml:space="preserve">:::::::::::--::::-::::::::::::::::--:           .     .--      .:-:.:::::::::::::::::.......</tspan>
-<tspan x="30" y="140.34" xml:space="preserve">:::::::::::---:::-:::::::::::---:-:                                 .:::::::::::::::::......</tspan>
-<tspan x="30" y="147.88" xml:space="preserve">::::::::::-----------:::::-::----:                                   ::::::::::::::::::.....</tspan>
-<tspan x="30" y="155.43" xml:space="preserve">:::::::--------------::-::----:-:                      .             .::::::::::::::::::....</tspan>
-<tspan x="30" y="162.98" xml:space="preserve">:::::-------------------:-------           .--+*%@@@@@@@@@%*-.        ::::::::::::::::::::..</tspan>
-<tspan x="30" y="170.52" xml:space="preserve">:::::-:::----------------------.        =+#%@@@@@@@@@@@@@@@@@@@@=     ::::::::::::::::::::..</tspan>
-<tspan x="30" y="178.06" xml:space="preserve">:::::--::----------------------       .==+#@@@@@@@@@@@@@@@@@@@@@@#  .  ::::::::::::::::::::.</tspan>
-<tspan x="30" y="185.61" xml:space="preserve">--::----------------:-:-----:-.      ::=*#%@@@@@@@@@@@@@@@@@@@@@@@#    ::::::::::::::::::::.</tspan>
-<tspan x="30" y="193.16" xml:space="preserve">----------------------------:-       .-*#%%@@@@@@@@@@@@@@@@@@@@@@@@.   .:::::::::::::::::::.</tspan>
-<tspan x="30" y="200.7" xml:space="preserve">------------------------------        -*#@@@@@@@@@@@@@@@@@@@@@@@@@*    .:::::::::::::::::::.</tspan>
-<tspan x="30" y="208.25" xml:space="preserve">------------------------------       .+*#@@@@@@@@@@@@@@@@@@@@@@@@@=    .::::::::::::::::::::</tspan>
-<tspan x="30" y="215.79" xml:space="preserve">::---------------------------=              :+#@@@@@@@@@%%####*%@@@    ::::::::::::::::.:...</tspan>
-<tspan x="30" y="223.33" xml:space="preserve">-:----------------------------          :-:     .#@@@-.   :=+*+-=@@+   ::::::::::::::::::...</tspan>
-<tspan x="30" y="230.88" xml:space="preserve">--:--------------------------              :=   .@@@@*  -.:=+==**@@#  =::::::::::::::::::...</tspan>
-<tspan x="30" y="238.43" xml:space="preserve">-::-------------------------:      :-.   ::*@%+ :@@@@@@-=. ::.=*@@@@ +%::::::::::::::::.....</tspan>
-<tspan x="30" y="245.97" xml:space="preserve">:--:------------------------:     -#%@@@%##%%#*==@@@@@@@%#%@@@@@@@@@-@%.::::::::::::::......</tspan>
-<tspan x="30" y="253.51" xml:space="preserve">-----------------------------     :=+*%@@@@@@#.+@@@@@@@@@@@@@@@@@@@@*@# ::::::::::::::::....</tspan>
-<tspan x="30" y="261.06" xml:space="preserve">::---------------------------:     :=*#@@@@@@*=#@@@@@@@@@@@@@@@@@@@@#@.::::::::::::::::::...</tspan>
-<tspan x="30" y="268.61" xml:space="preserve">-----------------------------=      -*@@@@@@#    -*+.*@@@@@@@@@@@@@@+-.:::::::::::::::::::::</tspan>
-<tspan x="30" y="276.15" xml:space="preserve">------------------------------      :*%@@@@@      :-.#@@@@@@@@@@@@@%-.:::::::::::::::::::::.</tspan>
-<tspan x="30" y="283.69" xml:space="preserve">-------------------------------     .=#%@@@%-.::*@%***#@@@@@@@@@@@@=-:::::::::::::::::::::..</tspan>
-<tspan x="30" y="291.24" xml:space="preserve">-------------------------------      -*%%=     .:-*##*+:=@@@@@@@@%*:..::::::::::::::::::::::</tspan>
-<tspan x="30" y="298.79" xml:space="preserve">:::----------------------------.     .=#= :  :*@@@@@@%*+:.@@@@@@#*- .::::::::::::::::::.:...</tspan>
-<tspan x="30" y="306.33" xml:space="preserve">::::-----:----------------------      .+**%*-.:=*##@@@@@@%@@@@%%#- .:::::::::::::::::::.....</tspan>
-<tspan x="30" y="313.88" xml:space="preserve">::::--::-:----------------------       -**+==-.. .:=#@@@@@@@@%#*=. ::::::::::::::::..::.....</tspan>
-<tspan x="30" y="321.42" xml:space="preserve">::::::::--:-----:-----------:.         .-+**#@@@@@@@@@@@@@@%#**=.  ..:::::::::::::..........</tspan>
-<tspan x="30" y="328.96" xml:space="preserve">:::::::::--:-::-------::.                 .-=+#@@@@@@@@@@%#+=-.          ..:::::::..........</tspan>
-<tspan x="30" y="336.51" xml:space="preserve">:::::::::------::.                            .-**+*+-=#**+-.                  ...::::::....</tspan>
-<tspan x="30" y="344.06" xml:space="preserve">::::::::::.                                           --==.                            .....</tspan>
-<tspan x="30" y="351.6" xml:space="preserve">:::.                                                                 .                      </tspan>
-<tspan x="30" y="359.15" xml:space="preserve">.                                                                    .                      </tspan>
-<tspan x="30" y="366.69" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="374.24" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="381.78" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="389.32" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="396.87" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="404.42" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="411.96" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="419.5" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="427.05" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="434.6" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="442.14" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="449.69" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="457.23" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="464.78" xml:space="preserve">                                                                                            </tspan>
-<tspan x="30" y="472.32" xml:space="preserve">                                                                                            </tspan>
+  <!-- ASCII portrait -->
+  <g mask="url(#reveal)">
+    <text x="28" y="0" class="ascii">
 
-  </text>
+<tspan x="30" y="74.0" xml:space="preserve">..,,,,,,,,,,,::::::;;:::;;;;;;;;;;;;;:::::,::::::::::::::,,,,,,::::,,,,,,,,,,,,,,,..</tspan>
+<tspan x="30" y="82.2" xml:space="preserve">,.,,,,,,:,,,,:::::;;;::;;;;:;;ii;;;;;;;;::,:,:::::::,:::,,,,,::,::,::,,,.,,,,,,,....</tspan>
+<tspan x="30" y="90.4" xml:space="preserve">,,,,:,,,:,::,::;;;ii;:;;i;;;;;i;ii;;;;;;;::::,,::::,::::,:::,:,,::,,:::::,.,.,,,....</tspan>
+<tspan x="30" y="98.6" xml:space="preserve">,,:,,,:::;;,,,:;i;ii;;;;ii;;;;i;ii;:;;;;;;;::::,::::;::::,,::::,::::,,,::,,,,,..,,..</tspan>
+<tspan x="30" y="106.8" xml:space="preserve">,,:,,,,,::::::;;iii;;;iii;;iiiiii;;:;i;;;;;;::,:,,,:::::::::::::::;:,:::,:,,,,,.,,,.</tspan>
+<tspan x="30" y="115.0" xml:space="preserve">,::::::::::;;;iiiiiiiiiiiiiiiiiiiii;ii;::;1111i1;;;::,:::::::::;;;;::,,::::,:,..,,,.</tspan>
+<tspan x="30" y="123.2" xml:space="preserve">,:;:::;;;::;iiiiiiiiiiiiiiiii11iii;;i;i1t1;     .,,:iii:,:::;;;;;::::::::::,:,,,,...</tspan>
+<tspan x="30" y="131.4" xml:space="preserve">,::::;;;;;ii;iiiiiiiii11111ii111iii;;1t:              .ii;;:;;;ii;:::::;:::,,:,,,...</tspan>
+<tspan x="30" y="139.6" xml:space="preserve">:::;;;;;;;iiiii1iiiii1111i11ii11iii1t:             t    .:::;;;;;;;:::::::,:,,,,....</tspan>
+<tspan x="30" y="147.8" xml:space="preserve">::;;i;iiiiiiiiii11ii11i11111i11111tt            ;i ,.  ;fi;;;;;;;;;;;;::::,::,::....</tspan>
+<tspan x="30" y="156.0" xml:space="preserve">::;;:;;i;i;iiiiii11111i111111111if.         .  ,.,     :  ;i;;;;;:;;;;;::::,:::,,,..</tspan>
+<tspan x="30" y="164.2" xml:space="preserve">:::;;;ii;iii11ii111111111111iit1f.                         1;;;ii;ii;;;::::,,::,,,,,</tspan>
+<tspan x="30" y="172.4" xml:space="preserve">:::;;;;;;iii1111111tt11111i1111f;                          i;;i;;ii;;;;;;,::,::,,..,</tspan>
+<tspan x="30" y="180.6" xml:space="preserve">;;;;;:ii;ii111t11111t11111111ttf         :f@@@@@@@@@i      .1i;ii;;;;;:ii;::,::::,,,</tspan>
+<tspan x="30" y="188.8" xml:space="preserve">;;;;;;i;;i1111111tt11tt1111111L,      C@@@@@@@@@@@@@@@@G    t;;iiii;;;;;;;:::,:::,,,</tspan>
+<tspan x="30" y="197.0" xml:space="preserve">;;;::ii;i11i1ti1ttttttt11111t1L     .L0@@@@@@@@@@@@@@@@@C   i;;;iii;;:;;;;;:::,,,::,</tspan>
+<tspan x="30" y="205.2" xml:space="preserve">;;;;;i;i11111111tttt111111111tt    ,1C@@@@@@@@@@@@@@@@@@@;  ;i;;;;i;;:;;;;;::;:::,:,</tspan>
+<tspan x="30" y="213.4" xml:space="preserve">;;;;iiii1t11111t1111ttttt11tif;     i@@@@@@@@@@@@@@@@@@@@C  .i;i;;;;;;;;;;;:::,:::,:</tspan>
+<tspan x="30" y="221.6" xml:space="preserve">;iii;iii1111111ttttttt1ttt1t1L,     f@@@@@@@@@@@@@@@@@@@@   .i;;;;iiiii;:;;;::::::::</tspan>
+<tspan x="30" y="229.8" xml:space="preserve">;;;;;iii1111tt1tttttttt11ttt1L.     tC@@@@@@@@@@@@@@@@@@@   ;i;iiiii;i;;;;::::::;:,,</tspan>
+<tspan x="30" y="238.0" xml:space="preserve">;;;;;iii1111t11ttttttt1111tt1Ci           1@@@@@@f.;fLf@@@  ;i;;;;ii;i;:;::::::::,,,</tspan>
+<tspan x="30" y="246.2" xml:space="preserve">;;;i11111111t1ttttttt11ttttttf        tt    @@@G   @@@@0@@  ;i;;;;ii;i;;;:::,:::::,,</tspan>
+<tspan x="30" y="254.4" xml:space="preserve">;iiiiiii11i1t1tttttttttt11t1L;          @@  @@@@Lf    L@@@ @f,iii;iiii;;::::,,:::,,,</tspan>
+<tspan x="30" y="262.6" xml:space="preserve">;;;i1i11111i111t11t11111t1t1L.   :@@@@@@@@@:@@@@@@8@@@@@@@1@1,i;i;;;;;;::::;,,:,:::,</tspan>
+<tspan x="30" y="270.8" xml:space="preserve">;;iiiii1i111tt1ttttt1t11ttttf1   :@@@@@@@@.@@@@@@@@@@@@@@@@@,;;;i;;;;i;;::::::,,:,,,</tspan>
+<tspan x="30" y="279.0" xml:space="preserve">;;ii1ii11111tt11tttt1111tt1ttC    iG@@@@@@1@@@@@@@@@@@@@@@@@ iiiii;:;ii;;:::::::,,.,</tspan>
+<tspan x="30" y="287.2" xml:space="preserve">;;;iiii1i11t111ttttttttttt11iLi    0@@@@@:  f@L@@@@@@@@@@@@,,;;ii;;;;;;;;;;;::::,,,,</tspan>
+<tspan x="30" y="295.4" xml:space="preserve">;:;iii1111111t1ttttttttttttt1ti    L@@@@@    ; @@@@@@@@@@@i ;;;;;;;;;;;;;;;::;;::,:,</tspan>
+<tspan x="30" y="303.6" xml:space="preserve">;;;iii1111111ttt11t11t1ttttt1tL    ;@@@@@::f@@@@@@@@@@@@@@i;;;;;:;;;;;;;;;:::;::,,:,</tspan>
+<tspan x="30" y="311.8" xml:space="preserve">:;;;iiii11111tt1tt11tt11ttttt1C     @@@    iL@@@t @@@@@@@1 :;;;;;;;;;;;;;;;;::::,,,,</tspan>
+<tspan x="30" y="320.0" xml:space="preserve">::;;;iiiii111111t111t11tttttttL:    t@.f;;@@@@@@@@1@@@@@G ;;;;;;;;;;;;;;:::::::::,:,</tspan>
+<tspan x="30" y="328.2" xml:space="preserve">::;;iiiiiiii111itt11t11t111111tL     0@@@    ;@@@@@@@@@@, i;;:;;;;;;;;;;:::::,,,:,,,</tspan>
+<tspan x="30" y="336.4" xml:space="preserve">::;;;;iiiiii1i111111111111tfLLf:     t@@C@@@@@@@@@@@@@@t ;t1ii;;:;;:;::::::::::,,,,,</tspan>
+<tspan x="30" y="344.6" xml:space="preserve">::::;;:;;;iiii11111i1tffLLti          iG@@@@@@@@@@@@@0;    .;i11ii;;;:::::,,:;:::,.,</tspan>
+<tspan x="30" y="352.8" xml:space="preserve">::;::;;;;i;;iii11tfLft;,                  C@@@@@@@@@i           ,:iiiii;;::,,:,,,,,,</tspan>
+<tspan x="30" y="361.0" xml:space="preserve">::::::;;;;;ii1tt1:                              f8@i                  .,;;;i;:,,:,,,</tspan>
+<tspan x="30" y="369.2" xml:space="preserve">::,,:::::ii:.                                   ,.            .             .;:,,,.,</tspan>
+<tspan x="30" y="377.4" xml:space="preserve">,,,:,::;;.                                                   .                .::,,,</tspan>
+<tspan x="30" y="385.6" xml:space="preserve">,,::::;.                                                                        ,:,,</tspan>
+<tspan x="30" y="393.8" xml:space="preserve">,,,,;:                                                                           .:,</tspan>
+<tspan x="30" y="402.0" xml:space="preserve">,,,;.                                                                             .,</tspan>
+<tspan x="30" y="410.2" xml:space="preserve">,,:.                                                                               .</tspan>
+<tspan x="30" y="418.4" xml:space="preserve">,,.                                                                                 </tspan>
+<tspan x="30" y="426.6" xml:space="preserve">,:                                                                                  </tspan>
+<tspan x="30" y="434.8" xml:space="preserve">,                                                                                   </tspan>
+<tspan x="30" y="443.0" xml:space="preserve">.                                                                                   </tspan>
+<tspan x="30" y="451.2" xml:space="preserve">                                                                                    </tspan>
+<tspan x="30" y="459.4" xml:space="preserve">                                                                                    </tspan>
+<tspan x="30" y="467.6" xml:space="preserve">                                                                                    </tspan>
+<tspan x="30" y="475.8" xml:space="preserve">                                                                                    </tspan>
+<tspan x="30" y="484.0" xml:space="preserve">                                                                                    </tspan>
+<tspan x="30" y="492.2" xml:space="preserve">                                                                                    </tspan>
+<tspan x="30" y="500.4" xml:space="preserve">                                                                                    </tspan>
+<tspan x="30" y="508.6" xml:space="preserve">                                                                                    </tspan>
+<tspan x="30" y="516.8" xml:space="preserve">                                                                                    </tspan>
+
+    </text>
   </g>
 
-  <g clip-path="url(#lc0)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="42" class="head">ebram@devos</tspan><tspan class="cc"> -——————————————————————————————————————————-—-</tspan></text></g><g clip-path="url(#lc1)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="66" class="cc">. </tspan><tspan class="key">Subject</tspan><tspan class="cc">: .......................... </tspan><tspan class="value">Ebram Wagdy Samy</tspan></text></g><g clip-path="url(#lc2)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="88" class="cc">. </tspan><tspan class="key">Role</tspan><tspan class="cc">: ............................. </tspan><tspan class="value">Flutter Dev · Mobile &amp; IoT Eng</tspan></text></g><g clip-path="url(#lc3)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="110" class="cc">. </tspan><tspan class="key">Origin</tspan><tspan class="cc">: ........................... </tspan><tspan class="value">Cairo, Egypt</tspan></text></g><g clip-path="url(#lc4)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="132" class="cc">. </tspan><tspan class="key">Focus</tspan><tspan class="cc">: ............................ </tspan><tspan class="value">Cross-Platform Apps &amp; Smart IoT</tspan></text></g><g clip-path="url(#lc5)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="154" class="cc">. </tspan><tspan class="key">Status</tspan><tspan class="cc">: ............ </tspan><tspan class="value">Building • Designing • Shipping</tspan></text></g><g clip-path="url(#lc6)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="176" class="cc">. </tspan><tspan class="key">ToolChain</tspan><tspan class="cc">: ................. </tspan><tspan class="value">VS Code, Git, Linux, Postman</tspan></text></g><g clip-path="url(#lc7)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="198" class="cc">. </tspan></text></g><g clip-path="url(#lc8)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="220" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">Lang</tspan><tspan class="cc">: .......... </tspan><tspan class="value">Dart, C/C++, Python, JavaScript</tspan></text></g><g clip-path="url(#lc9)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="242" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">Frameworks</tspan><tspan class="cc">: .... </tspan><tspan class="value">Flutter, ESP-IDF, Arduino</tspan></text></g><g clip-path="url(#lc10)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="264" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">Platforms</tspan><tspan class="cc">: ..... </tspan><tspan class="value">Android, iOS, ESP32, ESP8266</tspan></text></g><g clip-path="url(#lc11)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="286" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">Cloud/IoT</tspan><tspan class="cc">: ..... </tspan><tspan class="value">Firebase, MQTT, REST APIs, OTA</tspan></text></g><g clip-path="url(#lc12)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="308" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">UI/UX</tspan><tspan class="cc">: ......... </tspan><tspan class="value">Pixel-Perfect UI, Clean Architecture</tspan></text></g><g clip-path="url(#lc13)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="330" class="cc">. </tspan></text></g><g clip-path="url(#lc14)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="352" class="accent">- Contact</tspan><tspan class="cc"> -————————————————————————————————————————————-—-</tspan></text></g><g clip-path="url(#lc15)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="374" class="cc">. </tspan><tspan class="key">Grid</tspan><tspan class="cc">.</tspan><tspan class="key">Mail</tspan><tspan class="cc">: ....................... </tspan><tspan class="value">wagdyebram78@gmail.com</tspan></text></g><g clip-path="url(#lc16)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="396" class="cc">. </tspan><tspan class="key">Grid</tspan><tspan class="cc">.</tspan><tspan class="key">Portfolio</tspan><tspan class="cc">: .................. </tspan><tspan class="value">ebramwagdy.online</tspan></text></g><g clip-path="url(#lc17)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="418" class="cc">. </tspan><tspan class="key">Grid</tspan><tspan class="cc">.</tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">: ................... </tspan><tspan class="value">in/ebramwagdy</tspan></text></g><g clip-path="url(#lc18)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="440" class="cc">. </tspan><tspan class="key">Grid</tspan><tspan class="cc">.</tspan><tspan class="key">Github</tspan><tspan class="cc">: ..................... </tspan><tspan class="value">EbramWagdy1</tspan></text></g><g clip-path="url(#lc19)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="462" class="cc">. </tspan></text></g><g clip-path="url(#lc20)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="484" class="accent">- Live Stats</tspan><tspan class="cc"> -————————————————————————————————————————————-—-</tspan></text></g><g clip-path="url(#lc21)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="506" class="cc">. </tspan><tspan class="value">See live GitHub stats badges below in README &#8595;</tspan></text></g>
+  <!-- Terminal content -->
+  <g clip-path="url(#lc0)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="42" class="head">EbramWagdy1@devos</tspan><tspan class="cc"> ─────────────────────────────────────────────────</tspan></text></g><g clip-path="url(#lc1)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="66" class="cc">· </tspan><tspan class="key">Subject</tspan><tspan class="cc"> ···················· </tspan><tspan class="value">Ebram Wagdy Samy Zaki</tspan></text></g><g clip-path="url(#lc2)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="88" class="cc">· </tspan><tspan class="key">Role</tspan><tspan class="cc"> ······················· </tspan><tspan class="value">Flutter Dev · Mobile & IoT Engineer</tspan></text></g><g clip-path="url(#lc3)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="110" class="cc">· </tspan><tspan class="key">Origin</tspan><tspan class="cc"> ····················· </tspan><tspan class="value">Cairo, Egypt</tspan></text></g><g clip-path="url(#lc4)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="132" class="cc">· </tspan><tspan class="key">Focus</tspan><tspan class="cc"> ······················ </tspan><tspan class="value">Cross-Platform & Embedded Systems</tspan></text></g><g clip-path="url(#lc5)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="154" class="cc">· </tspan><tspan class="key">Status</tspan><tspan class="cc"> ·········· </tspan><tspan class="value">Coding • Designing • Shipping</tspan></text></g><g clip-path="url(#lc6)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="176" class="cc">· </tspan><tspan class="key">ToolChain</tspan><tspan class="cc"> ··············· </tspan><tspan class="value">VS Code, Git, Linux, Firebase</tspan></text></g><g clip-path="url(#lc7)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="198" class="cc"> </tspan></text></g><g clip-path="url(#lc8)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="220" class="accent">── Tech Stack</tspan><tspan class="cc"> ─────────────────────────────────────────────────</tspan></text></g><g clip-path="url(#lc9)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="242" class="cc">· </tspan><tspan class="key">Lang</tspan><tspan class="cc"> ·················· </tspan><tspan class="value">Dart, C/C++, Python, JavaScript</tspan></text></g><g clip-path="url(#lc10)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="264" class="cc">· </tspan><tspan class="key">Frameworks</tspan><tspan class="cc"> ·········· </tspan><tspan class="value">Flutter, ESP-IDF, Arduino</tspan></text></g><g clip-path="url(#lc11)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="286" class="cc">· </tspan><tspan class="key">Platforms</tspan><tspan class="cc"> ··········· </tspan><tspan class="value">Android, iOS, ESP32, ESP8266</tspan></text></g><g clip-path="url(#lc12)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="308" class="cc">· </tspan><tspan class="key">Cloud/IoT</tspan><tspan class="cc"> ··········· </tspan><tspan class="value">Firebase, MQTT, REST APIs, OTA</tspan></text></g><g clip-path="url(#lc13)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="330" class="cc">· </tspan><tspan class="key">UI/UX</tspan><tspan class="cc"> ················· </tspan><tspan class="value">Animations, Pixel-Perfect UI</tspan></text></g><g clip-path="url(#lc14)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="352" class="cc"> </tspan></text></g><g clip-path="url(#lc15)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="374" class="accent">── Contact</tspan><tspan class="cc"> ─────────────────────────────────────────────────</tspan></text></g><g clip-path="url(#lc16)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="396" class="cc">· </tspan><tspan class="key">Mail</tspan><tspan class="cc"> ··················· </tspan><tspan class="value">wagdyebram78@gmail.com</tspan></text></g><g clip-path="url(#lc17)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="418" class="cc">· </tspan><tspan class="key">Web</tspan><tspan class="cc"> ···················· </tspan><tspan class="value">ebramwagdy.online</tspan></text></g><g clip-path="url(#lc18)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="440" class="cc">· </tspan><tspan class="key">LinkedIn</tspan><tspan class="cc"> ··············· </tspan><tspan class="value">in/ebramwagdy</tspan></text></g><g clip-path="url(#lc19)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="462" class="cc">· </tspan><tspan class="key">GitHub</tspan><tspan class="cc"> ················· </tspan><tspan class="value">EbramWagdy1</tspan></text></g><g clip-path="url(#lc20)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="484" class="cc"> </tspan></text></g><g clip-path="url(#lc21)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="506" class="cc">· </tspan><tspan class="value">⭐ 30 repos · 🎯 Focusing · 🌍 Egypt</tspan></text></g>
 
-  <rect x="522" y="491.0" width="9" height="16" class="cursor-blink" opacity="0">
-    <animate attributeName="opacity" values="0;0;1;0;1;0;1;0" keyTimes="0;0.01;0.02;0.3;0.5;0.7;0.85;1" dur="1.4s" begin="3.66s" repeatCount="indefinite"/>
+  <!-- Blinking cursor -->
+  <rect x="543" y="492" width="9" height="16" class="cb" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;1;0;1;0" keyTimes="0;0.01;0.02;0.3;0.5;0.7;0.85;1" dur="1.3s" begin="3.5s" repeatCount="indefinite"/>
   </rect>
 </g>
 
-<rect x="0" y="-70" width="1180" height="70" fill="url(#scanGrad)" opacity="0.7" style="mix-blend-mode:screen">
-  <animateTransform attributeName="transform" type="translate" from="0 -70" to="0 680" dur="4.2s" repeatCount="indefinite"/>
+<!-- Scan line -->
+<rect x="0" y="-70" width="1240" height="70" fill="url(#scanGrad)" opacity="0.8" style="mix-blend-mode:screen">
+  <animateTransform attributeName="transform" type="translate" from="0 -70" to="0 715" dur="4.0s" repeatCount="indefinite"/>
 </rect>
 
-<rect x="3" y="3" width="1174" height="604" rx="16" fill="none" stroke="url(#borderGrad)" stroke-width="2" opacity="0.8">
-  <animate attributeName="opacity" values="0.5;0.95;0.5" dur="3.2s" repeatCount="indefinite"/>
+<!-- Border glow -->
+<rect x="3" y="3" width="1234" height="634" rx="18" fill="none" stroke="url(#borderGrad)" stroke-width="2" opacity="0.75">
+  <animate attributeName="opacity" values="0.45;0.9;0.45" dur="3.0s" repeatCount="indefinite"/>
 </rect>
 </svg>

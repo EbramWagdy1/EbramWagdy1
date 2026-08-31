@@ -4,303 +4,284 @@ from pathlib import Path
 from html import escape
 from PIL import Image, ImageEnhance, ImageOps
 
-# 1. Download Ebram's GitHub avatar
-avatar_url = "https://avatars.githubusercontent.com/u/165323131?v=4"
+# ==============================================================
+#  CONFIG — update here only
+# ==============================================================
+USERNAME        = "EbramWagdy1"
+DISPLAY_NAME    = "Ebram Wagdy"
+FULL_NAME       = "Ebram Wagdy Samy Zaki"
+ROLE            = "Flutter Dev · Mobile & IoT Engineer"
+ORIGIN          = "Cairo, Egypt"
+FOCUS           = "Cross-Platform & Embedded Systems"
+STATUS          = "Coding • Designing • Shipping"
+TOOLCHAIN       = "VS Code, Git, Linux, Firebase"
+LANG            = "Dart, C/C++, Python, JavaScript"
+FRAMEWORKS      = "Flutter, ESP-IDF, Arduino"
+PLATFORMS       = "Android, iOS, ESP32, ESP8266"
+CLOUD_IOT       = "Firebase, MQTT, REST APIs, OTA"
+UI_UX           = "Animations, Pixel-Perfect UI"
+EMAIL           = "wagdyebram78@gmail.com"
+PORTFOLIO       = "ebramwagdy.online"
+LINKEDIN        = "in/ebramwagdy"
+FACEBOOK        = "ebram.wagdy.5"
+INSTAGRAM       = "ebram_wagdy_"
+GITHUB_UNAME    = "EbramWagdy1"
+AVATAR_URL      = "https://avatars.githubusercontent.com/u/165323131?v=4"
+
+# ==============================================================
+#  1.  ASCII PORTRAIT
+# ==============================================================
 avatar_path = "avatar.png"
 if not os.path.exists(avatar_path):
-    print("Downloading avatar...")
-    urllib.request.urlretrieve(avatar_url, avatar_path)
+    urllib.request.urlretrieve(AVATAR_URL, avatar_path)
 
-# 2. Process image to ASCII art
 im = Image.open(avatar_path).convert("RGB")
-w_orig, h_orig = im.size
-crop_box = (int(w_orig * 0.15), int(h_orig * 0.05), int(w_orig * 0.85), int(h_orig * 0.85))
-im_cropped = im.crop(crop_box).convert("L")
+w0, h0 = im.size
+crop = (int(w0*0.06), int(h0*0.00), int(w0*0.94), int(h0*0.90))
+gray = im.crop(crop).convert("L")
 
-w, h = 92, 53
-im_resized = im_cropped.resize((w, h), Image.Resampling.LANCZOS)
-im_resized = ImageOps.autocontrast(im_resized, cutoff=1)
-im_resized = ImageEnhance.Contrast(im_resized).enhance(1.6)
-im_resized = ImageEnhance.Sharpness(im_resized).enhance(1.8)
+W, H = 84, 55
+gray = gray.resize((W, H), Image.Resampling.LANCZOS)
+gray = ImageOps.autocontrast(gray, cutoff=2)
+gray = ImageEnhance.Contrast(gray).enhance(2.2)
+gray = ImageEnhance.Sharpness(gray).enhance(2.8)
+gray = ImageEnhance.Brightness(gray).enhance(1.05)
 
-chars = " .:-=+*#%@"
-portrait_lines = []
-for y in range(h):
-    line = ""
-    for x in range(w):
-        val = im_resized.getpixel((x, y))
-        idx = int(val / 256 * len(chars))
-        line += chars[idx]
-    portrait_lines.append(line)
+# Richer character palette for better gradient
+CHARS = " .,:;i1tfLCG08@"
+portrait = []
+for y in range(H):
+    row = ""
+    for x in range(W):
+        v = gray.getpixel((x, y))
+        row += CHARS[int(v / 256 * len(CHARS))]
+    portrait.append(row)
 
 with open("portrait.txt", "w", encoding="utf-8") as f:
-    f.write("\n".join(portrait_lines))
+    f.write("\n".join(portrait))
 
-# 3. Build ASCII tspans
-start_y = 79.98
-step_y = 7.545
-tspans = []
-for i, line in enumerate(portrait_lines):
-    y = round(start_y + i * step_y, 2)
-    line_escaped = escape(line)
-    tspans.append(f'<tspan x="30" y="{y}" xml:space="preserve">{line_escaped}</tspan>')
+# ==============================================================
+#  2.  BUILD TSPANS
+# ==============================================================
+START_Y = 74.0
+STEP_Y  = 8.2
+tspans = "\n".join(
+    f'<tspan x="30" y="{round(START_Y + i * STEP_Y, 2)}" xml:space="preserve">{escape(row)}</tspan>'
+    for i, row in enumerate(portrait)
+)
 
-ascii_block = "\n".join(tspans)
+# ==============================================================
+#  3.  CLIP PATHS  (22 lines of terminal content)
+# ==============================================================
+clips = "".join(
+    f'<clipPath id="lc{i}"><rect x="500" y="{26.0+i*22:.2f}" width="0" height="24">'
+    f'<animate attributeName="width" from="0" to="690" dur="0.32s" begin="{0.6+i*0.10:.2f}s" fill="freeze"/>'
+    f'</rect></clipPath>'
+    for i in range(22)
+)
 
-# 4. Build clipPaths
-clip_paths = []
-for i in range(22):
-    y_rect = 26.0 + i * 22.0
-    begin_t = round(0.75 + i * 0.115, 2)
-    clip_paths.append(
-        f'<clipPath id="lc{i}"><rect x="500" y="{y_rect:.2f}" width="0" height="24">'
-        f'<animate attributeName="width" from="0" to="690" dur="0.38s" begin="{begin_t:.2f}s" fill="freeze"/>'
-        f"</rect></clipPath>"
-    )
-clip_paths_str = "".join(clip_paths)
+# ==============================================================
+#  4.  TERMINAL LINES  (rich, detailed content)
+# ==============================================================
+def line(lc, y, content):
+    return f'<g clip-path="url(#lc{lc})"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="{y}" {content}</text></g>'
 
-# 5. Build terminal lines
-terminal_lines = [
-    '<g clip-path="url(#lc0)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="42" class="head">ebram@devos</tspan><tspan class="cc"> -——————————————————————————————————————————-—-</tspan></text></g>',
-    '<g clip-path="url(#lc1)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="66" class="cc">. </tspan><tspan class="key">Subject</tspan><tspan class="cc">: .......................... </tspan><tspan class="value">Ebram Wagdy Samy</tspan></text></g>',
-    '<g clip-path="url(#lc2)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="88" class="cc">. </tspan><tspan class="key">Role</tspan><tspan class="cc">: ............................. </tspan><tspan class="value">Flutter Dev · Mobile &amp; IoT Eng</tspan></text></g>',
-    '<g clip-path="url(#lc3)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="110" class="cc">. </tspan><tspan class="key">Origin</tspan><tspan class="cc">: ........................... </tspan><tspan class="value">Cairo, Egypt</tspan></text></g>',
-    '<g clip-path="url(#lc4)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="132" class="cc">. </tspan><tspan class="key">Focus</tspan><tspan class="cc">: ............................ </tspan><tspan class="value">Cross-Platform Apps &amp; Smart IoT</tspan></text></g>',
-    '<g clip-path="url(#lc5)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="154" class="cc">. </tspan><tspan class="key">Status</tspan><tspan class="cc">: ............ </tspan><tspan class="value">Building • Designing • Shipping</tspan></text></g>',
-    '<g clip-path="url(#lc6)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="176" class="cc">. </tspan><tspan class="key">ToolChain</tspan><tspan class="cc">: ................. </tspan><tspan class="value">VS Code, Git, Linux, Postman</tspan></text></g>',
-    '<g clip-path="url(#lc7)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="198" class="cc">. </tspan></text></g>',
-    '<g clip-path="url(#lc8)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="220" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">Lang</tspan><tspan class="cc">: .......... </tspan><tspan class="value">Dart, C/C++, Python, JavaScript</tspan></text></g>',
-    '<g clip-path="url(#lc9)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="242" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">Frameworks</tspan><tspan class="cc">: .... </tspan><tspan class="value">Flutter, ESP-IDF, Arduino</tspan></text></g>',
-    '<g clip-path="url(#lc10)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="264" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">Platforms</tspan><tspan class="cc">: ..... </tspan><tspan class="value">Android, iOS, ESP32, ESP8266</tspan></text></g>',
-    '<g clip-path="url(#lc11)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="286" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">Cloud/IoT</tspan><tspan class="cc">: ..... </tspan><tspan class="value">Firebase, MQTT, REST APIs, OTA</tspan></text></g>',
-    '<g clip-path="url(#lc12)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="308" class="cc">. </tspan><tspan class="key">Core</tspan><tspan class="cc">.</tspan><tspan class="key">UI/UX</tspan><tspan class="cc">: ......... </tspan><tspan class="value">Pixel-Perfect UI, Clean Architecture</tspan></text></g>',
-    '<g clip-path="url(#lc13)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="330" class="cc">. </tspan></text></g>',
-    '<g clip-path="url(#lc14)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="352" class="accent">- Contact</tspan><tspan class="cc"> -————————————————————————————————————————————-—-</tspan></text></g>',
-    '<g clip-path="url(#lc15)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="374" class="cc">. </tspan><tspan class="key">Grid</tspan><tspan class="cc">.</tspan><tspan class="key">Mail</tspan><tspan class="cc">: ....................... </tspan><tspan class="value">wagdyebram78@gmail.com</tspan></text></g>',
-    '<g clip-path="url(#lc16)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="396" class="cc">. </tspan><tspan class="key">Grid</tspan><tspan class="cc">.</tspan><tspan class="key">Portfolio</tspan><tspan class="cc">: .................. </tspan><tspan class="value">ebramwagdy.online</tspan></text></g>',
-    '<g clip-path="url(#lc17)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="418" class="cc">. </tspan><tspan class="key">Grid</tspan><tspan class="cc">.</tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">: ................... </tspan><tspan class="value">in/ebramwagdy</tspan></text></g>',
-    '<g clip-path="url(#lc18)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="440" class="cc">. </tspan><tspan class="key">Grid</tspan><tspan class="cc">.</tspan><tspan class="key">Github</tspan><tspan class="cc">: ..................... </tspan><tspan class="value">EbramWagdy1</tspan></text></g>',
-    '<g clip-path="url(#lc19)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="462" class="cc">. </tspan></text></g>',
-    '<g clip-path="url(#lc20)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="484" class="accent">- Live Stats</tspan><tspan class="cc"> -————————————————————————————————————————————-—-</tspan></text></g>',
-    '<g clip-path="url(#lc21)"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="506" class="cc">. </tspan><tspan class="value">See live GitHub stats badges below in README &#8595;</tspan></text></g>'
-]
+def head_line(lc, y, text):
+    return line(lc, y, f'class="head">{text}</tspan><tspan class="cc"> ─────────────────────────────────────────────────</tspan>')
 
-terminal_block = "".join(terminal_lines)
+def info_line(lc, y, key, dots, value):
+    return line(lc, y, f'class="cc">· </tspan><tspan class="key">{key}</tspan><tspan class="cc">{dots}</tspan><tspan class="value">{value}</tspan>')
 
-# DARK SVG
-dark_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="610" viewBox="0 0 1180 610">
+def accent_line(lc, y, text):
+    return line(lc, y, f'class="accent">── {text}</tspan><tspan class="cc"> ─────────────────────────────────────────────────</tspan>')
+
+def blank(lc, y):
+    return f'<g clip-path="url(#lc{lc})"><text x="520" y="0" fill="#dbeafe"><tspan x="520" y="{y}" class="cc"> </tspan></text></g>'
+
+TERM = "".join([
+    head_line  (0,  42, f"{USERNAME}@devos"),
+    info_line  (1,  66, "Subject",   " ···················· ", FULL_NAME),
+    info_line  (2,  88, "Role",      " ······················· ", ROLE),
+    info_line  (3, 110, "Origin",    " ····················· ", ORIGIN),
+    info_line  (4, 132, "Focus",     " ······················ ", FOCUS),
+    info_line  (5, 154, "Status",    " ·········· ", STATUS),
+    info_line  (6, 176, "ToolChain", " ··············· ", TOOLCHAIN),
+    blank      (7, 198),
+    accent_line(8, 220, "Tech Stack"),
+    info_line  (9, 242, "Lang",      " ·················· ", LANG),
+    info_line  (10,264, "Frameworks"," ·········· ", FRAMEWORKS),
+    info_line  (11,286, "Platforms", " ··········· ", PLATFORMS),
+    info_line  (12,308, "Cloud/IoT", " ··········· ", CLOUD_IOT),
+    info_line  (13,330, "UI/UX",     " ················· ", UI_UX),
+    blank      (14,352),
+    accent_line(15,374, "Contact"),
+    info_line  (16,396, "Mail",      " ··················· ", EMAIL),
+    info_line  (17,418, "Web",       " ···················· ", PORTFOLIO),
+    info_line  (18,440, "LinkedIn",  " ··············· ", LINKEDIN),
+    info_line  (19,462, "GitHub",    " ················· ", GITHUB_UNAME),
+    blank      (20,484),
+    line       (21,506, 'class="cc">· </tspan><tspan class="value">⭐ 30 repos · 🎯 Focusing · 🌍 Egypt</tspan>'),
+])
+
+# ==============================================================
+#  5.  SVG BUILDER
+# ==============================================================
+def build_svg(dark: bool) -> str:
+    # Color tokens
+    if dark:
+        bg1, bg2       = "#080D1A", "#040912"
+        ascii_c1, ascii_c2 = "#00FFF7", "#7C3AED"
+        ascii_c3, ascii_c4 = "#38BDF8", "#00FFF7"
+        border1, border2, border3 = "#7C3AED", "#00FFF7", "#10B981"
+        scan1, scan2   = "#00FFF7", "#7C3AED"
+        scan_hi        = "#C7FBFE"
+        sl_fill        = "#7DD3FC"
+        tb_fill, tb_op = "#060C1C", "0.92"
+        panel_fill     = "#060C1C"
+        panel_op       = "0.4"
+        key_c          = "#00FFF7"
+        value_c        = "#F1F5F9"
+        cc_c           = "#334155"
+        head_c         = "#A78BFA"
+        accent_c       = "#34D399"
+        cursor_c       = "#00FFF7"
+        termbar_c      = "#475569"
+        scan_lbl       = "#F87171"
+        panel_tc       = "#38BDF8"
+        scan_blend     = "screen"
+        scan_op        = "0.8"
+        tb_dot_fill    = "#EF4444"
+    else:
+        bg1, bg2       = "#F0F4FF", "#D9E4F5"
+        ascii_c1, ascii_c2 = "#4F46E5", "#7C3AED"
+        ascii_c3, ascii_c4 = "#0EA5E9", "#4F46E5"
+        border1, border2, border3 = "#6D28D9", "#0EA5E9", "#059669"
+        scan1, scan2   = "#0EA5E9", "#7C3AED"
+        scan_hi        = "#38BDF8"
+        sl_fill        = "#334155"
+        tb_fill, tb_op = "#FFFFFF", "0.95"
+        panel_fill     = "#FFFFFF"
+        panel_op       = "0.6"
+        key_c          = "#2563EB"
+        value_c        = "#0F172A"
+        cc_c           = "#94A3B8"
+        head_c         = "#6D28D9"
+        accent_c       = "#059669"
+        cursor_c       = "#0EA5E9"
+        termbar_c      = "#64748B"
+        scan_lbl       = "#DC2626"
+        panel_tc       = "#2563EB"
+        scan_blend     = "multiply"
+        scan_op        = "0.35"
+        tb_dot_fill    = "#F87171"
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="640" viewBox="0 0 1240 640">
 <defs>
   <linearGradient id="asciiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#22D3EE">
-      <animate attributeName="stop-color" values="#22D3EE;#7C3AED;#38BDF8;#22D3EE" dur="9s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="100%" stop-color="#7C3AED">
-      <animate attributeName="stop-color" values="#7C3AED;#38BDF8;#22D3EE;#7C3AED" dur="9s" repeatCount="indefinite"/>
-    </stop>
+    <stop offset="0%" stop-color="{ascii_c1}"><animate attributeName="stop-color" values="{ascii_c1};{ascii_c2};{ascii_c3};{ascii_c1}" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="100%" stop-color="{ascii_c2}"><animate attributeName="stop-color" values="{ascii_c2};{ascii_c3};{ascii_c1};{ascii_c2}" dur="8s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#7C3AED"/>
-    <stop offset="50%" stop-color="#22D3EE"/>
-    <stop offset="100%" stop-color="#10B981"/>
+    <stop offset="0%" stop-color="{border1}"/>
+    <stop offset="50%" stop-color="{border2}"/>
+    <stop offset="100%" stop-color="{border3}"/>
   </linearGradient>
-  <radialGradient id="bgGlow" cx="30%" cy="20%" r="80%">
-    <stop offset="0%" stop-color="#0B1120"/>
-    <stop offset="100%" stop-color="#050816"/>
+  <radialGradient id="bgGlow" cx="35%" cy="25%" r="75%">
+    <stop offset="0%" stop-color="{bg1}"/>
+    <stop offset="100%" stop-color="{bg2}"/>
   </radialGradient>
   <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-  <stop offset="0%" stop-color="#22D3EE" stop-opacity="0"/>
-  <stop offset="45%" stop-color="#22D3EE" stop-opacity="0.05"/>
-  <stop offset="50%" stop-color="#A5F3FC" stop-opacity="0.65"/>
-  <stop offset="55%" stop-color="#22D3EE" stop-opacity="0.05"/>
-  <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
-</linearGradient>
+    <stop offset="0%"   stop-color="{scan1}" stop-opacity="0"/>
+    <stop offset="44%"  stop-color="{scan1}" stop-opacity="0.07"/>
+    <stop offset="50%"  stop-color="{scan_hi}" stop-opacity="0.7"/>
+    <stop offset="56%"  stop-color="{scan1}" stop-opacity="0.07"/>
+    <stop offset="100%" stop-color="{scan2}" stop-opacity="0"/>
+  </linearGradient>
   <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
-  <rect width="4" height="1" fill="#7DD3FC" opacity="0.05"/>
-</pattern>
-  <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-  <feGaussianBlur stdDeviation="4" result="blur"/>
-  <feMerge>
-    <feMergeNode in="blur"/>
-    <feMergeNode in="SourceGraphic"/>
-  </feMerge>
-</filter>
-  <mask id="revealMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1180" height="620">
-  <rect x="0" y="0" width="1180" height="0" fill="#fff">
-    <animate attributeName="height" from="0" to="560" dur="2.6s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
-  </rect>
-</mask>
-  {clip_paths_str}
+    <rect width="4" height="1" fill="{sl_fill}" opacity="0.04"/>
+  </pattern>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <mask id="reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="1240" height="650">
+    <rect x="0" y="0" width="1240" height="0" fill="#fff">
+      <animate attributeName="height" from="0" to="590" dur="2.4s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+    </rect>
+  </mask>
+  {clips}
   <style>
-    .ascii  {{ font-family: 'Courier New', Consolas, monospace; font-size: 7.4px; fill: url(#asciiGrad); letter-spacing: -0.2px; }}
-    .key    {{ font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #22D3EE; font-weight: bold; }}
-    .value  {{ font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #E5E7EB; }}
-    .cc     {{ font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #475569; }}
-    .head   {{ font-family: 'Courier New', Consolas, monospace; font-size: 17px; fill: #7C3AED; font-weight: bold; }}
-    .accent {{ font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #10B981; font-weight: bold; }}
+    .ascii  {{ font-family: 'Courier New', Consolas, monospace; font-size: 7.2px; fill: url(#asciiGrad); letter-spacing: -0.15px; }}
+    .key    {{ font-family: 'Courier New', Consolas, monospace; font-size: 14.5px; fill: {key_c}; font-weight: bold; }}
+    .value  {{ font-family: 'Courier New', Consolas, monospace; font-size: 14.5px; fill: {value_c}; }}
+    .cc     {{ font-family: 'Courier New', Consolas, monospace; font-size: 14.5px; fill: {cc_c}; }}
+    .head   {{ font-family: 'Courier New', Consolas, monospace; font-size: 16px;   fill: {head_c}; font-weight: bold; }}
+    .accent {{ font-family: 'Courier New', Consolas, monospace; font-size: 13px;   fill: {accent_c}; font-weight: bold; letter-spacing: 1px; }}
     text, tspan {{ white-space: pre; }}
-    
-    .term-label {{ font-family: 'Courier New', Consolas, monospace; font-size: 12px; fill: #64748B; letter-spacing: 0.5px; }}
-    .scan-label {{ font-family: 'Courier New', Consolas, monospace; font-size: 10px; fill: #F87171; letter-spacing: 1px; }}
-    .panel-title {{ font-family: 'Courier New', Consolas, monospace; font-size: 11px; fill: #38BDF8; letter-spacing: 2px; opacity: 0.7; }}
-    .cursor-blink {{ fill: #22D3EE; }}
-
+    .tl   {{ font-family: 'Courier New', Consolas, monospace; font-size: 11.5px; fill: {termbar_c}; letter-spacing: 0.4px; }}
+    .sl   {{ font-family: 'Courier New', Consolas, monospace; font-size: 9px;    fill: {scan_lbl}; letter-spacing: 1.5px; font-weight: bold; }}
+    .pt   {{ font-family: 'Courier New', Consolas, monospace; font-size: 10px;   fill: {panel_tc}; letter-spacing: 2.5px; opacity: 0.7; }}
+    .cb   {{ fill: {cursor_c}; }}
   </style>
 </defs>
 
-<rect width="1180" height="610" rx="18" fill="url(#bgGlow)"/>
-<rect width="1180" height="610" rx="18" fill="url(#scanlines)"/>
+<!-- Background -->
+<rect width="1240" height="640" rx="20" fill="url(#bgGlow)"/>
+<rect width="1240" height="640" rx="20" fill="url(#scanlines)"/>
 
+<!-- Title bar -->
 <g id="titlebar">
-  <rect x="3" y="3" width="1174" height="34" rx="16" fill="#0B1120" fill-opacity="0.85"/>
-  <circle cx="24" cy="20" r="5" fill="#EF4444"><animate attributeName="opacity" values="1;0.55;1" dur="4s" repeatCount="indefinite"/></circle>
-  <circle cx="42" cy="20" r="5" fill="#F59E0B"><animate attributeName="opacity" values="1;0.55;1" dur="4s" begin="0.3s" repeatCount="indefinite"/></circle>
-  <circle cx="60" cy="20" r="5" fill="#10B981"><animate attributeName="opacity" values="1;0.55;1" dur="4s" begin="0.6s" repeatCount="indefinite"/></circle>
-  <text x="590" y="25" text-anchor="middle" class="term-label">ebram@devos ~ % ./profile.sh --live</text>
-  <circle cx="1122" cy="20" r="4" fill="#F87171">
-    <animate attributeName="opacity" values="1;0.15;1" dur="1.1s" repeatCount="indefinite"/>
-  </circle>
-  <text x="1132" y="24" class="scan-label">SCANNING</text>
+  <rect x="3" y="3" width="1234" height="36" rx="18" fill="{tb_fill}" fill-opacity="{tb_op}"/>
+  <circle cx="26" cy="21" r="5.5" fill="{tb_dot_fill}"><animate attributeName="opacity" values="1;0.5;1" dur="4.5s" repeatCount="indefinite"/></circle>
+  <circle cx="45" cy="21" r="5.5" fill="#F59E0B"><animate attributeName="opacity" values="1;0.5;1" dur="4.5s" begin="0.25s" repeatCount="indefinite"/></circle>
+  <circle cx="64" cy="21" r="5.5" fill="#10B981"><animate attributeName="opacity" values="1;0.5;1" dur="4.5s" begin="0.5s" repeatCount="indefinite"/></circle>
+  <text x="620" y="26" text-anchor="middle" class="tl">{USERNAME}@devos ─ zsh ─ ~/profile.sh ──live──────────────────────────</text>
+  <circle cx="1190" cy="21" r="4" fill="{scan_lbl}"><animate attributeName="opacity" values="1;0.12;1" dur="1.0s" repeatCount="indefinite"/></circle>
+  <text x="1200" y="26" class="sl">LIVE</text>
 </g>
 
-<g transform="translate(0,38)">
-  <rect x="14" y="26" width="488" height="468" rx="14" fill="#0B1120" fill-opacity="0.35" stroke="url(#borderGrad)" stroke-width="1" opacity="0.35"/>
-  <rect x="508" y="10" width="655" height="500" rx="14" fill="#0B1120" fill-opacity="0.35" stroke="url(#borderGrad)" stroke-width="1" opacity="0.35"/>
-  <text x="30" y="24" class="panel-title">VISUAL.MAP</text>
-  <text x="524" y="24" class="panel-title">SYSTEM.INFO</text>
+<g transform="translate(0,42)">
+  <!-- Panels -->
+  <rect x="14" y="22" width="505" height="498" rx="14" fill="{panel_fill}" fill-opacity="{panel_op}" stroke="url(#borderGrad)" stroke-width="1.2" opacity="0.4"/>
+  <rect x="530" y="8"  width="695" height="512" rx="14" fill="{panel_fill}" fill-opacity="{panel_op}" stroke="url(#borderGrad)" stroke-width="1.2" opacity="0.4"/>
+  <text x="28"  y="20" class="pt">[ VISUAL.MAP ]</text>
+  <text x="545" y="20" class="pt">[ SYSTEM.INFO ]</text>
 
-  <g mask="url(#revealMask)">
-  <text x="30" y="0" class="ascii">
-  
-{ascii_block}
+  <!-- ASCII portrait -->
+  <g mask="url(#reveal)">
+    <text x="28" y="0" class="ascii">
 
-  </text>
+{tspans}
+
+    </text>
   </g>
 
-  {terminal_block}
+  <!-- Terminal content -->
+  {TERM}
 
-  <rect x="522" y="491.0" width="9" height="16" class="cursor-blink" opacity="0">
-    <animate attributeName="opacity" values="0;0;1;0;1;0;1;0" keyTimes="0;0.01;0.02;0.3;0.5;0.7;0.85;1" dur="1.4s" begin="3.66s" repeatCount="indefinite"/>
+  <!-- Blinking cursor -->
+  <rect x="543" y="492" width="9" height="16" class="cb" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;1;0;1;0" keyTimes="0;0.01;0.02;0.3;0.5;0.7;0.85;1" dur="1.3s" begin="3.5s" repeatCount="indefinite"/>
   </rect>
 </g>
 
-<rect x="0" y="-70" width="1180" height="70" fill="url(#scanGrad)" opacity="0.7" style="mix-blend-mode:screen">
-  <animateTransform attributeName="transform" type="translate" from="0 -70" to="0 680" dur="4.2s" repeatCount="indefinite"/>
+<!-- Scan line -->
+<rect x="0" y="-70" width="1240" height="70" fill="url(#scanGrad)" opacity="{scan_op}" style="mix-blend-mode:{scan_blend}">
+  <animateTransform attributeName="transform" type="translate" from="0 -70" to="0 715" dur="4.0s" repeatCount="indefinite"/>
 </rect>
 
-<rect x="3" y="3" width="1174" height="604" rx="16" fill="none" stroke="url(#borderGrad)" stroke-width="2" opacity="0.8">
-  <animate attributeName="opacity" values="0.5;0.95;0.5" dur="3.2s" repeatCount="indefinite"/>
+<!-- Border glow -->
+<rect x="3" y="3" width="1234" height="634" rx="18" fill="none" stroke="url(#borderGrad)" stroke-width="2" opacity="0.75">
+  <animate attributeName="opacity" values="0.45;0.9;0.45" dur="3.0s" repeatCount="indefinite"/>
 </rect>
 </svg>
 """
 
-# LIGHT SVG
-light_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="610" viewBox="0 0 1180 610">
-<defs>
-  <linearGradient id="asciiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#4F46E5">
-      <animate attributeName="stop-color" values="#4F46E5;#7C3AED;#0EA5E9;#4F46E5" dur="9s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="100%" stop-color="#7C3AED">
-      <animate attributeName="stop-color" values="#7C3AED;#0EA5E9;#4F46E5;#7C3AED" dur="9s" repeatCount="indefinite"/>
-    </stop>
-  </linearGradient>
-  <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#7C3AED"/>
-    <stop offset="50%" stop-color="#0EA5E9"/>
-    <stop offset="100%" stop-color="#059669"/>
-  </linearGradient>
-  <radialGradient id="bgGlow" cx="30%" cy="20%" r="80%">
-    <stop offset="0%" stop-color="#F8FAFC"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </radialGradient>
-  <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-  <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0"/>
-  <stop offset="45%" stop-color="#0EA5E9" stop-opacity="0.06"/>
-  <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.55"/>
-  <stop offset="55%" stop-color="#0EA5E9" stop-opacity="0.06"/>
-  <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
-</linearGradient>
-  <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
-  <rect width="4" height="1" fill="#334155" opacity="0.035"/>
-</pattern>
-  <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-  <feGaussianBlur stdDeviation="4" result="blur"/>
-  <feMerge>
-    <feMergeNode in="blur"/>
-    <feMergeNode in="SourceGraphic"/>
-  </feMerge>
-</filter>
-  <mask id="revealMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1180" height="620">
-  <rect x="0" y="0" width="1180" height="0" fill="#fff">
-    <animate attributeName="height" from="0" to="560" dur="2.6s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
-  </rect>
-</mask>
-  {clip_paths_str}
-  <style>
-    .ascii  {{ font-family: 'Courier New', Consolas, monospace; font-size: 7.4px; fill: url(#asciiGrad); letter-spacing: -0.2px; }}
-    .key    {{ font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #0284C7; font-weight: bold; }}
-    .value  {{ font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #1E293B; }}
-    .cc     {{ font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #94A3B8; }}
-    .head   {{ font-family: 'Courier New', Consolas, monospace; font-size: 17px; fill: #7C3AED; font-weight: bold; }}
-    .accent {{ font-family: 'Courier New', Consolas, monospace; font-size: 15px; fill: #059669; font-weight: bold; }}
-    text, tspan {{ white-space: pre; }}
-    
-    .term-label {{ font-family: 'Courier New', Consolas, monospace; font-size: 12px; fill: #64748B; letter-spacing: 0.5px; }}
-    .scan-label {{ font-family: 'Courier New', Consolas, monospace; font-size: 10px; fill: #DC2626; letter-spacing: 1px; }}
-    .panel-title {{ font-family: 'Courier New', Consolas, monospace; font-size: 11px; fill: #0284C7; letter-spacing: 2px; opacity: 0.75; }}
-    .cursor-blink {{ fill: #0EA5E9; }}
+dark_svg  = build_svg(dark=True)
+light_svg = build_svg(dark=False)
 
-  </style>
-</defs>
-
-<rect width="1180" height="610" rx="18" fill="url(#bgGlow)"/>
-<rect width="1180" height="610" rx="18" fill="url(#scanlines)"/>
-
-<g id="titlebar">
-  <rect x="3" y="3" width="1174" height="34" rx="16" fill="#FFFFFF" fill-opacity="0.9"/>
-  <circle cx="24" cy="20" r="5" fill="#F87171"><animate attributeName="opacity" values="1;0.55;1" dur="4s" repeatCount="indefinite"/></circle>
-  <circle cx="42" cy="20" r="5" fill="#FBBF24"><animate attributeName="opacity" values="1;0.55;1" dur="4s" begin="0.3s" repeatCount="indefinite"/></circle>
-  <circle cx="60" cy="20" r="5" fill="#34D399"><animate attributeName="opacity" values="1;0.55;1" dur="4s" begin="0.6s" repeatCount="indefinite"/></circle>
-  <text x="590" y="25" text-anchor="middle" class="term-label">ebram@devos ~ % ./profile.sh --live</text>
-  <circle cx="1122" cy="20" r="4" fill="#EF4444">
-    <animate attributeName="opacity" values="1;0.15;1" dur="1.1s" repeatCount="indefinite"/>
-  </circle>
-  <text x="1132" y="24" class="scan-label">SCANNING</text>
-</g>
-
-<g transform="translate(0,38)">
-  <rect x="14" y="26" width="488" height="468" rx="14" fill="#FFFFFF" fill-opacity="0.55" stroke="url(#borderGrad)" stroke-width="1" opacity="0.4"/>
-  <rect x="508" y="10" width="655" height="500" rx="14" fill="#FFFFFF" fill-opacity="0.55" stroke="url(#borderGrad)" stroke-width="1" opacity="0.4"/>
-  <text x="30" y="24" class="panel-title">VISUAL.MAP</text>
-  <text x="524" y="24" class="panel-title">SYSTEM.INFO</text>
-
-  <g mask="url(#revealMask)">
-  <text x="30" y="0" class="ascii">
-  
-{ascii_block}
-
-  </text>
-  </g>
-
-  {terminal_block}
-
-  <rect x="522" y="491.0" width="9" height="16" class="cursor-blink" opacity="0">
-    <animate attributeName="opacity" values="0;0;1;0;1;0;1;0" keyTimes="0;0.01;0.02;0.3;0.5;0.7;0.85;1" dur="1.4s" begin="3.66s" repeatCount="indefinite"/>
-  </rect>
-</g>
-
-<rect x="0" y="-70" width="1180" height="70" fill="url(#scanGrad)" opacity="0.4" style="mix-blend-mode:multiply">
-  <animateTransform attributeName="transform" type="translate" from="0 -70" to="0 680" dur="4.2s" repeatCount="indefinite"/>
-</rect>
-
-<rect x="3" y="3" width="1174" height="604" rx="16" fill="none" stroke="url(#borderGrad)" stroke-width="2" opacity="0.7">
-  <animate attributeName="opacity" values="0.4;0.85;0.4" dur="3.2s" repeatCount="indefinite"/>
-</rect>
-</svg>
-"""
-
-Path("dark.svg").write_text(dark_svg, encoding="utf-8")
+Path("dark.svg").write_text(dark_svg,  encoding="utf-8")
 Path("light.svg").write_text(light_svg, encoding="utf-8")
-Path("dark-profile.svg").write_text(dark_svg, encoding="utf-8")
+Path("dark-profile.svg").write_text(dark_svg,  encoding="utf-8")
 Path("light-profile.svg").write_text(light_svg, encoding="utf-8")
-print("SVGs successfully generated!")
+print("All SVGs generated successfully!")
