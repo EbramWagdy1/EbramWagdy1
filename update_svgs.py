@@ -301,4 +301,6 @@ light_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="610
 
 Path("dark.svg").write_text(dark_svg, encoding="utf-8")
 Path("light.svg").write_text(light_svg, encoding="utf-8")
+Path("dark-profile.svg").write_text(dark_svg, encoding="utf-8")
+Path("light-profile.svg").write_text(light_svg, encoding="utf-8")
 print("SVGs successfully generated!")
