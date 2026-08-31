@@ -110,9 +110,14 @@ function pickTargets(cells) {
     .sort((a, b) => a.col - b.col || a.row - b.row);
 }
 
+// Exact key-time: when is the rocket centre over this column?
+// Rocket forward pass: x goes from (GRID_X+5) to (GRID_X+(COLS-1)*STEP+CELL-5) in t=0→0.5
 function kt(col, dir) {
-  const span = 0.46;
-  const t    = 0.02 + (col / (COLS - 1)) * span;
+  const x0   = GRID_X + 5;                          // JET_X_START
+  const x1   = GRID_X + (COLS - 1) * STEP + CELL - 5; // JET_X_END
+  const xCol = GRID_X + col * STEP + CELL / 2;      // column centre
+  const tFwd = 0.5 * (xCol - x0) / (x1 - x0);      // 0 → 0.5
+  const t    = Math.max(0.01, Math.min(0.49, tFwd));
   return dir === "fwd" ? t : 1 - t;
 }
 
