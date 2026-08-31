@@ -103,7 +103,7 @@ ROWS = [
     blank  (14,330),
     section(15,351, "Contact"),
     info   (16,372, "Mail",      EMAIL),
-    info   (17,393, "Web",       PORTFOLIO),
+    info   (17,393, "Portfolio", PORTFOLIO),
     info   (18,414, "LinkedIn",  LINKEDIN),
     info   (19,435, "GitHub",    GITHUB_U),
     tline  (20,456,
