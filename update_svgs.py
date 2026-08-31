@@ -10,9 +10,9 @@ from PIL import Image, ImageEnhance, ImageOps
 USERNAME        = "EbramWagdy1"
 DISPLAY_NAME    = "Ebram Wagdy"
 FULL_NAME       = "Ebram Wagdy Samy Zaki"
-ROLE            = "Flutter Dev · Mobile & IoT Engineer"
+ROLE            = "Flutter Dev | Mobile &amp; IoT Engineer"
 ORIGIN          = "Cairo, Egypt"
-FOCUS           = "Cross-Platform & Embedded Systems"
+FOCUS           = "Cross-Platform &amp; Embedded Systems"
 STATUS          = "Coding • Designing • Shipping"
 TOOLCHAIN       = "VS Code, Git, Linux, Firebase"
 LANG            = "Dart, C/C++, Python, JavaScript"
@@ -120,7 +120,7 @@ TERM = "".join([
     info_line  (18,440, "LinkedIn",  " ··············· ", LINKEDIN),
     info_line  (19,462, "GitHub",    " ················· ", GITHUB_UNAME),
     blank      (20,484),
-    line       (21,506, 'class="cc">· </tspan><tspan class="value">⭐ 30 repos · 🎯 Focusing · 🌍 Egypt</tspan>'),
+    line       (21,506, 'class="cc">· </tspan><tspan class="value">30 repos | Focusing | Egypt</tspan>'),
 ])
 
 # ==============================================================
