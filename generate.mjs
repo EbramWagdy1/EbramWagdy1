@@ -242,32 +242,32 @@ function buildJet() {
 </g>`;
 }
 
-// ── Month labels ───────────────────────────────────────────────
+// ── Month labels ───────────────────────────────────────────
 function buildLabels(cells) {
-  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  const seen   = new Map();
+  const months  = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const seenMonth = new Set();   // track which month-index was already drawn
+  const labels = [];
   for (const c of cells) {
     if (!c.date || c.row !== 0) continue;
-    // Support both real dates (YYYY-MM-DD) and mock dates (2026-WN-D)
     const parts = c.date.split("-");
     if (parts.length < 2) continue;
     const mNum = parseInt(parts[1]);
     if (isNaN(mNum) || mNum < 1 || mNum > 12) continue;
-    const key = `${c.col}-${mNum}`;
-    if (!seen.has(key)) seen.set(key, { x: c.x, m: mNum - 1 });
+    if (!seenMonth.has(mNum)) {
+      seenMonth.add(mNum);
+      labels.push(`<text x="${f(c.x)}" y="13" font-family="'Courier New',monospace" ` +
+        `font-size="9" fill="#334155" letter-spacing="0.5">${months[mNum-1]}</text>`);
+    }
   }
-  return [...seen.values()].map(({ x, m }) =>
-    `<text x="${f(x)}" y="13" font-family="'Courier New',monospace" ` +
-    `font-size="9" fill="#334155" letter-spacing="0.5">${months[m]}</text>`
-  ).join("\n");
+  return labels.join("\n");
 }
 
 // ── Scanline overlay ───────────────────────────────────────────
 function buildScanline() {
-  return `<rect x="12" y="-30" width="${W-24}" height="28" opacity="0.6"
-  fill="url(#scanGrad)" style="mix-blend-mode:screen">
+  return `<rect x="14" y="-20" width="${W-28}" height="20" opacity="0.2"
+  fill="url(#scanGrad)" style="mix-blend-mode:screen" rx="4">
   <animateTransform attributeName="transform" type="translate"
-    from="0 0" to="0 ${H+60}" dur="4.0s" repeatCount="indefinite"/>
+    from="0 0" to="0 ${H+40}" dur="5.0s" repeatCount="indefinite"/>
 </rect>`;
 }
 
