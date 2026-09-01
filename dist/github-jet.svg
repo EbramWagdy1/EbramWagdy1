@@ -309,6 +309,7 @@
 <rect x="523" y="22" width="12" height="12" rx="2.5" fill="#0D1F35" opacity="0.9"/>
 <rect x="523" y="37" width="12" height="12" rx="2.5" fill="#00FFF7"><animate attributeName="fill" dur="18s" repeatCount="indefinite" keyTimes="0;0.49;0.497;0.51;0.517;1" values="#00FFF7;#00FFF7;#C7FBFE;#00FFF7;#C7FBFE;#00FFF7"/><animate attributeName="opacity" dur="18s" repeatCount="indefinite" keyTimes="0;0.49;0.497;0.51;0.517;1" values="0.9;0.9;1;0.9;1;0.9"/></rect>
 <rect x="522" y="36" width="14" height="14" rx="3.5" fill="none" stroke="#C7FBFE" stroke-width="1.5" opacity="0"><animate attributeName="opacity" dur="18s" repeatCount="indefinite" keyTimes="0;0.49;0.497;0.51;0.517;1" values="0;0;0.9;0;0.9;0"/></rect>
+<rect x="523" y="52" width="12" height="12" rx="2.5" fill="#0D1F35" opacity="0.9"/>
 
 </g>
 
