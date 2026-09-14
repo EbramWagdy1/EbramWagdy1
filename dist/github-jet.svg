@@ -308,7 +308,8 @@
 <rect x="507" y="81" width="14" height="14" rx="3.5" fill="none" stroke="#C7FBFE" stroke-width="1.5" opacity="0"><animate attributeName="opacity" dur="18s" repeatCount="indefinite" keyTimes="0;0.4839;0.4909;0.5161;0.5231;1" values="0;0;0.9;0;0.9;0"/></rect>
 <rect x="508" y="97" width="12" height="12" rx="2.5" fill="#0E3D5C" opacity="0.9"/>
 <rect x="508" y="112" width="12" height="12" rx="2.5" fill="#0E3D5C" opacity="0.9"/>
-<rect x="523" y="22" width="12" height="12" rx="2.5" fill="#0D1F35" opacity="0.9"/>
+<rect x="523" y="22" width="12" height="12" rx="2.5" fill="#0E3D5C" opacity="0.9"/>
+<rect x="523" y="37" width="12" height="12" rx="2.5" fill="#0D1F35" opacity="0.9"/>
 
 </g>
 
